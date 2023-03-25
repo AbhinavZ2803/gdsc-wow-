@@ -1,12 +1,19 @@
 import 'dart:async';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:help_out/screens/home_screen.dart';
 import 'package:help_out/screens/first_screen.dart';
 import 'package:help_out/screens/sign_up_screen.dart';
+import 'package:help_out/screens/aboutus.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:help_out/screens/contactus.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -77,6 +84,15 @@ class _SplashScreenState extends State<SplashScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ScaleTransition(
+              scale: _animation,
+              child: Image.asset(
+                'assets/images/logo2.png',
+                width: 100.0,
+                height: 100.0,
+              ),
+            ),
+            SizedBox(height: 16.0),
             FadeTransition(
               opacity: _animation,
               child: Text(
@@ -85,15 +101,6 @@ class _SplashScreenState extends State<SplashScreen>
                   fontSize: 32.0,
                   fontWeight: FontWeight.bold,
                 ),
-              ),
-            ),
-            SizedBox(height: 16.0),
-            ScaleTransition(
-              scale: _animation,
-              child: Image.asset(
-                'assets/images/logo2.png',
-                width: 100.0,
-                height: 100.0,
               ),
             ),
           ],

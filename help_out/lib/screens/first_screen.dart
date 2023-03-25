@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_out/screens/home_screen.dart';
 import 'package:help_out/screens/first_screen.dart';
+import 'package:help_out/screens/login_screen.dart';
 import 'package:help_out/screens/sign_up_screen.dart';
 
 class first_screen extends StatefulWidget {
@@ -45,7 +46,7 @@ class _first_screenState extends State<first_screen> {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Color.fromARGB(255, 234, 5, 165),
+                    Color.fromARGB(255, 218, 37, 37),
                     Color.fromARGB(255, 248, 246, 246)
                   ],
                   begin: Alignment.bottomCenter,
@@ -65,25 +66,27 @@ class _first_screenState extends State<first_screen> {
                 Container(
                     // color : Colors.black,
                     margin: EdgeInsets.only(top: 100),
+                    height: 50,
                     width: 200,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(13),
-                        color: Colors.black),
+                        color: Color.fromARGB(255, 7, 7, 7)),
                     child: ElevatedButton(
                         onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const sign_up_screen()),
+                                builder: (context) => const SignUpScreen()),
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black,
-                        ),
+                            backgroundColor: Color.fromARGB(128, 10, 10, 10),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18))),
                         child: Text(
                           "Get Started",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 250, 249, 249),
                               fontSize: 20,
                               fontWeight: FontWeight.w400),
                         ))),
@@ -103,7 +106,8 @@ class _first_screenState extends State<first_screen> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const home()),
+                                        builder: (context) =>
+                                            const login_screen()),
                                   );
                                 },
                                 // style: ElevatedButton.styleFrom(
