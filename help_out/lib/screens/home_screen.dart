@@ -8,6 +8,10 @@ import 'package:help_out/screens/aboutus.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:help_out/screens/contactus.dart';
+import 'package:help_out/screens/userlist.dart';
+import 'package:help_out/screens/infopage1.dart';
+import 'package:help_out/screens/infopage2.dart';
+import 'package:help_out/screens/userlist.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -39,10 +43,10 @@ Drawer _drawer(context) {
           child: Text("Menu",
               style: TextStyle(fontSize: 30, color: Colors.white))),
       ListTile(
-          title: Text("feedback ", style: TextStyle(fontSize: 20)),
+          title: Text("Register", style: TextStyle(fontSize: 20)),
           onTap: () {}),
       ListTile(
-          title: Text("Contact  ", style: TextStyle(fontSize: 20)),
+          title: Text("Contact", style: TextStyle(fontSize: 20)),
           onTap: () {
             Navigator.push(
               context,
@@ -69,9 +73,9 @@ Widget _bodyofscreen(BuildContext context) {
       alignment: Alignment.center,
       margin: EdgeInsets.only(top: 80),
       child: Column(children: [
-        _row1(),
+        _row1(context),
         _row2(context),
-        _row3(),
+        _row3(context),
       ]));
 }
 
@@ -83,7 +87,7 @@ Row _row2(BuildContext context) {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const first_screen()));
+                      builder: (context) => OrphanageListScreen()));
               // first_screen();
               //print("button clicked");
             },
@@ -115,7 +119,12 @@ Row _row2(BuildContext context) {
     // Icon(Icons.book_online_outlined , color : Colors.black, ),
     Expanded(
         child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => OrphanageListScreen()));
+            },
             child: Container(
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 194, 43, 86),
@@ -141,11 +150,14 @@ Row _row2(BuildContext context) {
   ]);
 }
 
-Row _row1() {
+Row _row1(context) {
   return Row(children: [
     Expanded(
       child: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => OrphanageListScreen()));
+          },
           child: Container(
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 194, 43, 86),
@@ -170,7 +182,12 @@ Row _row1() {
     ),
     Expanded(
         child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => OrphanageListScreen()));
+            },
             child: Container(
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 194, 43, 86),
@@ -205,7 +222,7 @@ Image foodlogo(String s) {
   );
 }
 
-Row _row3() {
+Row _row3(context) {
   return Row(children: [
     Expanded(
         child: Container(

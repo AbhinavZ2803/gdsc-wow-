@@ -39,6 +39,9 @@ dependencies:
   firebase_core: ^2.8.0
   firebase_auth: ^4.3.0
   fluttertoast: ^8.2.1
+  url_launcher: ^6.0.1
+  geolocator: ^7.0.3
+  geocoding: ^2.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -69,6 +72,10 @@ flutter:
     - assets/images/teaching.png
     - assets/images/clothes.png
     - assets/images/others.png
+    - assets/images/dnyandeep.jpg
+    - assets/images/qre.jpg
+    - assets/images/qr.jpg
+    - assets/images/oldage.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
