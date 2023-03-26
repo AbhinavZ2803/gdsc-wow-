@@ -90,7 +90,17 @@ class OrphanageInfoPage2 extends StatelessWidget {
             const SizedBox(height: 20),
             // Location link
             GestureDetector(
-              onTap: () async {},
+              onTap: () async {
+                var url = Uri.parse(
+                    'https://www.google.com/maps/place/Sneh+Sawali+Aple+Ghar+Vruddhalay+-+Old+Age+Home/@18.6298516,73.7775113,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2b79f03c19059:0x2923c17bc149be42!8m2!3d18.6298516!4d73.7797!16s%2Fg%2F11g0rrqr_2?hl=en-US');
+                // ignore: deprecated_member_use
+                if (await canLaunchUrl(url)) {
+                  // ignore: deprecated_member_use
+                  await launchUrl(url);
+                } else {
+                  throw 'Could not launch $url';
+                }
+              },
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.blue,

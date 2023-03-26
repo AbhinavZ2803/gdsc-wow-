@@ -12,6 +12,10 @@ import 'package:help_out/screens/userlist.dart';
 import 'package:help_out/screens/infopage1.dart';
 import 'package:help_out/screens/infopage2.dart';
 import 'package:help_out/screens/userlist.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:help_out/screens/contactus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -44,7 +48,17 @@ Drawer _drawer(context) {
               style: TextStyle(fontSize: 30, color: Colors.white))),
       ListTile(
           title: Text("Register", style: TextStyle(fontSize: 20)),
-          onTap: () {}),
+          onTap: () async {
+            var url = Uri.parse(
+                'https://docs.google.com/forms/d/e/1FAIpQLScwZwh_YzxMAZnFLefMoVRR40e2mjS29ulCiqKVV0-PnhkGEQ/viewform?usp=sf_link ');
+            // ignore: deprecated_member_use
+            if (await canLaunchUrl(url)) {
+              // ignore: deprecated_member_use
+              await launchUrl(url);
+            } else {
+              throw 'Could not launch $url';
+            }
+          }),
       ListTile(
           title: Text("Contact", style: TextStyle(fontSize: 20)),
           onTap: () {

@@ -17,6 +17,7 @@ import 'package:geolocator/geolocator.dart';
 import 'dart:math';
 import 'package:help_out/screens/infopage2.dart';
 
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -44,10 +45,12 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: OrphanageInfoPage2(),
     );
   }
 }
+
+class _MypState {}
 
 class SplashScreen extends StatefulWidget {
   @override
