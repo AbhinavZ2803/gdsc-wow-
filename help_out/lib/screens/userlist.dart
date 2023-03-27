@@ -16,17 +16,20 @@ class _OrphanageListScreenState extends State<OrphanageListScreen> {
   Map<String, Widget> _orphanagePages = {
     'Dnyandeep Balgruha': OrphanageInfoPage1(),
     'Sneh Sawali Old Age Home': OrphanageInfoPage2(),
-    '123 Orphanage': OrphanageDetailsScreen(orphanageName: '123 Orphanage'),
-    '456 Orphanage': OrphanageDetailsScreen(orphanageName: '456 Orphanage'),
-    '789 Orphanage': OrphanageDetailsScreen(orphanageName: '789 Orphanage'),
+    'Nachiket Balgram':
+        OrphanageDetailsScreen(orphanageName: 'Nachiket Balgram'),
+    'Adarana Charitable trust':
+        OrphanageDetailsScreen(orphanageName: 'Adarana Charitable trust'),
+    'Jivhala Balsangopan Gruh':
+        OrphanageDetailsScreen(orphanageName: 'Jivhala Balsangopan Gruh'),
   };
 
   List<String> _orphanageNames = [
     'Dnyandeep Balgruha',
     'Sneh Sawali Old Age Home',
-    '123 Orphanage',
-    '456 Orphanage',
-    '789 Orphanage',
+    'Nachiket Balgram',
+    'Adarana Charitable trust',
+    'Jivhala Balsangopan Gruh',
   ];
 
   List<String> _filteredOrphanageNames = [];
@@ -60,12 +63,19 @@ class _OrphanageListScreenState extends State<OrphanageListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 194, 43, 86),
+          // title: Text("HelpOut",
+          //     style: TextStyle(
+          //         color: Colors.white,
+          //         fontStyle: FontStyle.normal,
+          //         fontSize: 26.0)),
           title: TextField(
             controller: _searchController,
             onChanged: _updateSearchQuery,
             decoration: InputDecoration(
-              hintText: 'Search for orphanages...',
-            ),
+                hintText: 'Search ...',
+                border: InputBorder.none,
+                hintStyle: TextStyle(color: Colors.black, fontSize: 18)),
           ),
           leading: IconButton(
               icon: Icon(Icons.arrow_back),
@@ -76,19 +86,32 @@ class _OrphanageListScreenState extends State<OrphanageListScreen> {
         itemCount: _filteredOrphanageNames.length,
         itemBuilder: (BuildContext context, int index) {
           final orphanageIndex = index;
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: GestureDetector(
-              onTap: () {
-                // Navigate to the page for the selected orphanage
-                _navigateToOrphanageDetailsScreen(
-                    _filteredOrphanageNames[orphanageIndex]);
-              },
-              child: ElevatedButton(
-                child: Text(_filteredOrphanageNames[orphanageIndex]),
-                onPressed: null,
-              ),
+          return Container(
+            padding: const EdgeInsets.only(top: 15.0),
+            margin: EdgeInsets.only(left: 15, right: 15, top: 20),
+            height: 100,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              //color: Color.fromARGB(255, 203, 31, 31)
             ),
+            child: GestureDetector(
+                onTap: () {
+                  // Navigate to the page for the selected orphanage
+                  _navigateToOrphanageDetailsScreen(
+                      _filteredOrphanageNames[orphanageIndex]);
+                },
+                child: Container(
+                  //padding: EdgeInsets.only(top: 30, left: 80),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 205, 206, 205),
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Text(_filteredOrphanageNames[orphanageIndex],
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold)),
+                )),
           );
         },
       ),

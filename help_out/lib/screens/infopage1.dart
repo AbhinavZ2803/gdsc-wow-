@@ -19,7 +19,8 @@ class OrphanageInfoPage1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Info'),
+          backgroundColor: Color.fromARGB(255, 194, 43, 86),
+          title: const Text('Details'),
           leading: IconButton(
               icon: Icon(Icons.arrow_back),
               onPressed: () {
@@ -29,6 +30,7 @@ class OrphanageInfoPage1 extends StatelessWidget {
         child: Column(
           children: [
             Container(
+              margin: EdgeInsets.only(top: 15, left: 15, right: 15),
               height: 200,
               width: double.infinity,
               color: Colors.grey[300],
@@ -46,10 +48,19 @@ class OrphanageInfoPage1 extends StatelessWidget {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10),
+                  Container(
+                      margin: EdgeInsets.only(right: 20),
+                      child: Text("Address : Dighi, Pune , Maharashtra -411015",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold))),
+                  const SizedBox(height: 10),
                   Text(
                     'An orphanage taking care of over 70 orphans by funding their basic needs and primary education',
                     style: TextStyle(fontSize: 16),
                   ),
+                  const SizedBox(height: 10),
                 ],
               ),
             ),
@@ -68,6 +79,7 @@ class OrphanageInfoPage1 extends StatelessWidget {
                 }
               },
               child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 15),
                 decoration: BoxDecoration(
                   color: Colors.green,
                   borderRadius: BorderRadius.circular(10),
@@ -87,13 +99,15 @@ class OrphanageInfoPage1 extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+
             // Location link
+            const SizedBox(height: 15),
             GestureDetector(
               onTap: () async {},
               child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 15),
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Color.fromARGB(255, 194, 43, 86),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 padding:
@@ -111,30 +125,43 @@ class OrphanageInfoPage1 extends StatelessWidget {
                 ),
               ),
             ),
-
+            const SizedBox(height: 15),
             Container(
-                margin: EdgeInsets.only(top: 30),
+                //margin: EdgeInsets.symmetric(horizontal: 15),
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                          decoration: BoxDecoration(
-                            color: Colors.orange,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 20),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(Icons.monetization_on,
-                                    color: Colors.white),
-                                const SizedBox(width: 10),
-                                Text('Donate'),
-                              ])),
-                      Image.asset('assets/images/qre.jpg')
+                      // Container(
+                      //     decoration: BoxDecoration(
+                      //       color: Colors.orange,
+                      //       borderRadius: BorderRadius.circular(10),
+                      //     ),
+                      //     padding: const EdgeInsets.symmetric(
+                      //         vertical: 10, horizontal: 20),
+                      //     child: Row(
+                      //         mainAxisAlignment: MainAxisAlignment.center,
+                      //         children: [
+                      //           Icon(Icons.monetization_on,
+                      //               color: Colors.white),
+                      //           const SizedBox(width: 10),
+                      //           Text('Donate'),
+                      //         ])),
+                      Text("Scan to Pay",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold)),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Image.asset(
+                        'assets/images/qre.jpg',
+                        fit: BoxFit.contain,
+                        height: 220,
+                        width: 220,
+                      )
                     ]))
           ],
         ),

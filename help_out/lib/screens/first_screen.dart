@@ -107,7 +107,7 @@ class _first_screenState extends State<first_screen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const login_screen()),
+                                            home()),
                                   );
                                 },
                                 // style: ElevatedButton.styleFrom(

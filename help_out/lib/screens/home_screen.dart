@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:help_out/main.dart';
 import 'package:help_out/screens/first_screen.dart';
 
 import 'package:help_out/screens/first_screen.dart';
@@ -16,6 +17,10 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:help_out/screens/contactus.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:help_out/screens/profile.dart' show ProfilePage;
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -28,7 +33,7 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildappbar(),
+      appBar: _buildappbar(context),
       drawer: _drawer(context),
       body: _bodyofscreen(context),
     );
@@ -77,7 +82,13 @@ Drawer _drawer(context) {
           }),
       ListTile(
           title: Text("Sign Out ", style: TextStyle(fontSize: 20)),
-          onTap: () {}),
+          onTap: () async {
+            await _auth.signOut();
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SplashScreen()),
+            );
+          }),
     ]),
   );
 }
@@ -239,55 +250,60 @@ Image foodlogo(String s) {
 Row _row3(context) {
   return Row(children: [
     Expanded(
-        child: Container(
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 194, 43, 86),
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-            margin: EdgeInsets.only(right: 20, left: 40, top: 40),
-            height: 150,
-            width: 100,
-            padding: EdgeInsets.only(top: 20),
-            child: Column(
-              children: [
-                Image.asset("assets/images/clothes.png",
-                    height: 70, width: 70, fit: BoxFit.contain),
-                Container(
-                    margin: EdgeInsets.only(top: 15),
-                    child: Text("Clothes",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 23,
-                        )))
-              ],
-            ))),
+        child: GestureDetector(
+      child: Container(
+          decoration: BoxDecoration(
+            color: Color.fromARGB(255, 194, 43, 86),
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          margin: EdgeInsets.only(right: 20, left: 40, top: 40),
+          height: 150,
+          width: 100,
+          padding: EdgeInsets.only(top: 20),
+          child: Column(
+            children: [
+              Image.asset("assets/images/clothes.png",
+                  height: 70, width: 70, fit: BoxFit.contain),
+              Container(
+                  margin: EdgeInsets.only(top: 15),
+                  child: Text("Clothes",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 23,
+                      )))
+            ],
+          )),
+    )),
     Expanded(
-        child: Container(
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 194, 43, 86),
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-            margin: EdgeInsets.only(right: 30, left: 30, top: 40),
-            height: 150,
-            width: 100,
-            padding: EdgeInsets.only(top: 25),
-            child: Column(
-              children: [
-                Image.asset("assets/images/others.png",
-                    height: 70, width: 60, fit: BoxFit.contain),
-                Container(
-                    margin: EdgeInsets.only(top: 10),
-                    child: Text("others",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 23,
-                        )))
-              ],
-            ))),
+        child: GestureDetector(
+      onTap: () {},
+      child: Container(
+          decoration: BoxDecoration(
+            color: Color.fromARGB(255, 194, 43, 86),
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          margin: EdgeInsets.only(right: 30, left: 30, top: 40),
+          height: 150,
+          width: 100,
+          padding: EdgeInsets.only(top: 25),
+          child: Column(
+            children: [
+              Image.asset("assets/images/others.png",
+                  height: 70, width: 60, fit: BoxFit.contain),
+              Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Text("others",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 23,
+                      )))
+            ],
+          )),
+    )),
   ]);
 }
 
-AppBar _buildappbar() {
+AppBar _buildappbar(context) {
   return AppBar(
       backgroundColor: Color.fromARGB(255, 194, 43, 86),
       title: Row(children: [
@@ -297,11 +313,9 @@ AppBar _buildappbar() {
                     color: Colors.white,
                     fontStyle: FontStyle.normal,
                     fontSize: 28.0))),
-        Container(
-            margin: EdgeInsets.only(left: 38),
-            height: 50,
+        GestureDetector(
             child: Icon(
-              Icons.account_circle,
-            ))
+          Icons.account_circle,
+        ))
       ]));
 }

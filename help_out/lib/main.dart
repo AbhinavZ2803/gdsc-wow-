@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:help_out/screens/home_screen.dart';
 import 'package:help_out/screens/first_screen.dart';
+import 'package:help_out/screens/login_screen.dart';
 import 'package:help_out/screens/sign_up_screen.dart';
 import 'package:help_out/screens/aboutus.dart';
 import 'package:help_out/screens/userlist.dart';
@@ -16,7 +17,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'dart:math';
 import 'package:help_out/screens/infopage2.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,12 +46,12 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: OrphanageInfoPage2(),
+      home: SplashScreen(),
     );
   }
 }
 
-class _MypState {}
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -71,13 +72,21 @@ class _SplashScreenState extends State<SplashScreen>
     );
     _animation = Tween<double>(begin: 0, end: 1).animate(_animationController);
     _animationController.forward();
-    Timer(
-      Duration(seconds: 3),
-      () => Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => first_screen()),
-      ),
-    );
+    Timer(Duration(seconds: 3), () {
+      if (_auth.currentUser == null) {
+        // User is not signed in, show signup screen
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => first_screen()),
+        );
+      } else {
+        // User is already signed in, navigate to home screen
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => home()),
+        );
+      }
+    });
   }
 
   @override
