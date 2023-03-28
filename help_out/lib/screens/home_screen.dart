@@ -19,7 +19,7 @@ import 'package:help_out/screens/contactus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:help_out/screens/profile.dart' show ProfilePage;
-
+import 'package:help_out/screens/userlist2.dart';
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class home extends StatefulWidget {
@@ -32,11 +32,17 @@ class home extends StatefulWidget {
 class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _buildappbar(context),
-      drawer: _drawer(context),
-      body: _bodyofscreen(context),
-    );
+    return WillPopScope(
+        onWillPop: () async {
+          // Do not allow user to go back to login page
+          Navigator.of(context).popUntil((route) => route.isFirst);
+          return false;
+        },
+        child: Scaffold(
+          appBar: _buildappbar(context),
+          drawer: _drawer(context),
+          body: _bodyofscreen(context),
+        ));
   }
 }
 
@@ -251,6 +257,10 @@ Row _row3(context) {
   return Row(children: [
     Expanded(
         child: GestureDetector(
+           onTap: () => {Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => OrphanageListScreen2()))},
       child: Container(
           decoration: BoxDecoration(
             color: Color.fromARGB(255, 194, 43, 86),

@@ -106,8 +106,7 @@ class _first_screenState extends State<first_screen> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            home()),
+                                        builder: (context) => login_screen()),
                                   );
                                 },
                                 // style: ElevatedButton.styleFrom(

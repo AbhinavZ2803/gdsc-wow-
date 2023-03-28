@@ -8,7 +8,6 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:help_out/screens/contactus.dart';
 
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 /*
@@ -307,7 +306,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           Fluttertoast.showToast(msg: "Sign up successful");
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) =>  home()),
+            MaterialPageRoute(builder: (context) => login_screen()),
           );
         }
       } on FirebaseAuthException catch (e) {

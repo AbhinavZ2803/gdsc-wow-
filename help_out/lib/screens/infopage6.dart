@@ -12,8 +12,8 @@ import 'dart:convert';
 import 'package:help_out/screens/contactus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class OrphanageInfoPage1 extends StatelessWidget {
-  const OrphanageInfoPage1({Key? key}) : super(key: key);
+class InfoPage6 extends StatelessWidget {
+  const InfoPage6({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class OrphanageInfoPage1 extends StatelessWidget {
               height: 200,
               width: double.infinity,
               color: Colors.grey[300],
-              child: Center(child: Image.asset('assets/images/dnyandeep.jpg')),
+              child: Center(child: Image.asset('assets/images/infopage6i.jpg')),
             ),
             const SizedBox(height: 20),
             // Text placeholders
@@ -44,23 +44,22 @@ class OrphanageInfoPage1 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Dnyandeep Balgruha',
+                    'Adarane Charitable Trust',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10),
                   Container(
                       margin: EdgeInsets.only(right: 20),
-                      child: Text("Address : Dighi, Pune , Maharashtra -411015",
+                      child: Text("Address : Jakkur,Bengaluru,Karnataka",
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 15,
                               fontWeight: FontWeight.bold))),
                   const SizedBox(height: 10),
                   Text(
-                    'An orphanage taking care of over 70 orphans by funding their basic needs and primary education',
+                    'Adarane Charitable trust a non-profit organization established in 2005 at Bangalore with a Mission reach the lives of the downtrodden children irrespective of their Religion, Caste & Community and to work towards the up-liftment of those children.',
                     style: TextStyle(fontSize: 16),
                   ),
-                  const SizedBox(height: 10),
                 ],
               ),
             ),
@@ -70,7 +69,7 @@ class OrphanageInfoPage1 extends StatelessWidget {
               onTap: () async {
                 final Uri url = Uri(
                   scheme: 'tel',
-                  path: "885 683 2824",
+                  path: "991 674 4744",
                 );
                 if (await canLaunchUrl(url)) {
                   await launchUrl(url);
@@ -92,20 +91,19 @@ class OrphanageInfoPage1 extends StatelessWidget {
                     Icon(Icons.call, color: Colors.white),
                     const SizedBox(width: 10),
                     Text(
-                      'Call +918856832824',
+                      'Call +919916744744',
                       style: TextStyle(fontSize: 18, color: Colors.white),
                     ),
                   ],
                 ),
               ),
             ),
-
+            const SizedBox(height: 20),
             // Location link
-            const SizedBox(height: 15),
             GestureDetector(
               onTap: () async {
                 var url = Uri.parse(
-                    'https://www.google.com/maps/place/Dnyandeep+Balgruha/@18.623014,73.8680463,15z/data=!4m6!3m5!1s0x3bc2c70a82e7be9d:0xea151d5f8315cad7!8m2!3d18.623014!4d73.8680463!16s%2Fg%2F11g6bskpn8?hl=en-US');
+                    'https://www.google.com/maps/place/Adarane+Charitable+Trust+(R)+Non-Profit+Organization/@13.0850902,77.624247,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae19c1f488f57b:0xdfa8057bc4042f8b!8m2!3d13.0850902!4d77.624247!16s%2Fg%2F1q679gjjk');
                 // ignore: deprecated_member_use
                 if (await canLaunchUrl(url)) {
                   // ignore: deprecated_member_use
@@ -135,9 +133,11 @@ class OrphanageInfoPage1 extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(
+              height: 15,
+            ),
             Container(
-                //margin: EdgeInsets.symmetric(horizontal: 15),
+                //margin: EdgeInsets.only(top: 30),
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
@@ -167,10 +167,10 @@ class OrphanageInfoPage1 extends StatelessWidget {
                         height: 10,
                       ),
                       Image.asset(
-                        'assets/images/qre.jpg',
+                        'assets/images/infopage6.jpg',
                         fit: BoxFit.contain,
-                        height: 220,
-                        width: 220,
+                        height: 210,
+                        width: 210,
                       )
                     ]))
           ],

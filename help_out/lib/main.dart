@@ -13,8 +13,7 @@ import 'dart:convert';
 import 'package:help_out/screens/contactus.dart';
 import 'package:help_out/screens/infopage1.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart';
+
 import 'dart:math';
 import 'package:help_out/screens/infopage2.dart';
 import 'package:firebase_auth/firebase_auth.dart';

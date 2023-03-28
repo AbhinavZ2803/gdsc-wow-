@@ -23,7 +23,7 @@ Future<void> login(context) async {
       password: passwordController.text,
     );
     Fluttertoast.showToast(msg: 'Login successful');
-    Navigator.pushReplacement(
+    Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => home()),
     );
@@ -63,12 +63,12 @@ class _login_screenState extends State<login_screen> {
                 fit: BoxFit.contain, width: 110, height: 110),
           ),
           _container3(context),
-          _container4(),
+          _container4(context),
         ]));
   }
 }
 
-Container _container4() {
+Container _container4(context) {
   return Container(
       margin: EdgeInsets.only(top: 20, bottom: 0),
       child: Column(
@@ -81,7 +81,12 @@ Container _container4() {
           Container(
               margin: EdgeInsets.only(right: 5),
               child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignUpScreen()),
+                    );
+                  },
                   child: Text(
                     "Register here",
                     style: TextStyle(

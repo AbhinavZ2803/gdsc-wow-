@@ -3,38 +3,33 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:help_out/screens/infopage1.dart';
 import 'package:help_out/screens/infopage2.dart';
-import 'package:help_out/screens/infopage3.dart';
-import 'package:help_out/screens/infopage4.dart';
-import 'package:help_out/screens/infopage5.dart';
-import 'package:help_out/screens/infopage6.dart';
-import 'package:help_out/screens/infopage7.dart';
-import 'package:help_out/screens/infopage8.dart';
 
-class OrphanageListScreen extends StatefulWidget {
+class OrphanageListScreen2 extends StatefulWidget {
   @override
   _OrphanageListScreenState createState() => _OrphanageListScreenState();
 }
 
-class _OrphanageListScreenState extends State<OrphanageListScreen> {
+class _OrphanageListScreenState extends State<OrphanageListScreen2> {
   TextEditingController _searchController = TextEditingController();
   String _searchQuery = '';
 
   Map<String, Widget> _orphanagePages = {
     'Dnyandeep Balgruha': OrphanageInfoPage1(),
-    'Sneh Sawali Old Age Home': OrphanageInfoPage2(),
-    'Jeeva Jyothi trust': InfoPage3(),
-    'Nachiket Balgram': InfoPage4(),
-    'Adarana Charitable trust': InfoPage6()
+    'Jeeva Jyothi Orphanage': OrphanageDetailsScreen(orphanageName: 'Jeeva Jyothi Orphanage',),
+    'Nachiket Balgram':
+        OrphanageDetailsScreen(orphanageName: 'Nachiket Balgram'),
+    'Adarana Charitable trust':
+        OrphanageDetailsScreen(orphanageName: 'Adarana Charitable trust'),
+    'NAAD Foundation':
+        OrphanageDetailsScreen(orphanageName: 'NAAD Foundation'),
   };
 
   List<String> _orphanageNames = [
     'Dnyandeep Balgruha',
-    'Sneh Sawali Old Age Home',
-    'Jeeva Jyothi trust',
+    'Jeeva Jyothi Orphanage',
     'Nachiket Balgram',
     'Adarana Charitable trust',
-    'Jivhala Balsangopan Gruh',
-    ''
+    'NAAD Foundation',
   ];
 
   List<String> _filteredOrphanageNames = [];
