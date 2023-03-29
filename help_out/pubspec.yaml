@@ -92,6 +92,7 @@ flutter:
     - assets/images/searchbar.jpg
     - assets/images/listpage.jpg
     - assets/images/loginpage.png
+    - assets/images/home.png
     
     
   # An image asset can refer to one or more resolution-specific "variants", see
