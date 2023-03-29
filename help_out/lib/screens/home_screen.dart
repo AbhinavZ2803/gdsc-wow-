@@ -35,30 +35,9 @@ class _homeState extends State<home> {
   Widget build(BuildContext context) {
     return WillPopScope(
         onWillPop: () async {
-          bool exit = await showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                title: Text('Exit'),
-                content: Text('Do you want to exit?'),
-                actions: <Widget>[
-                  ElevatedButton(
-                    child: Text('Yes'),
-                    onPressed: () {
-                      Navigator.of(context).pop(true);
-                    },
-                  ),
-                  ElevatedButton(
-                    child: Text('No'),
-                    onPressed: () {
-                      Navigator.of(context).pop(false);
-                    },
-                  ),
-                ],
-              );
-            },
-          );
-          return exit ?? false;
+          // Do not allow user to go back to login page
+          Navigator.of(context).popUntil((route) => route.isFirst);
+          return false;
         },
         child: Scaffold(
           appBar: _buildappbar(context),
@@ -313,7 +292,10 @@ Row _row3(context) {
     )),
     Expanded(
         child: GestureDetector(
-      onTap: () {},
+      onTap: () => {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => OrphanageListScreen()))
+      },
       child: Container(
           decoration: BoxDecoration(
             color: Color.fromARGB(255, 194, 43, 86),
