@@ -119,7 +119,7 @@ Container _container3(BuildContext context) {
             child: TextField(
               controller: emailController,
               decoration: InputDecoration(
-                  hintText: "Enter UserName",
+                  hintText: "Enter Email",
                   border: InputBorder.none,
                   hintStyle: TextStyle(color: Colors.black, fontSize: 18)),
             ),

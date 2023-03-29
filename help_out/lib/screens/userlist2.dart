@@ -3,6 +3,12 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:help_out/screens/infopage1.dart';
 import 'package:help_out/screens/infopage2.dart';
+import 'package:help_out/screens/infopage3.dart';
+import 'package:help_out/screens/infopage4.dart';
+import 'package:help_out/screens/infopage5.dart';
+import 'package:help_out/screens/infopage6.dart';
+import 'package:help_out/screens/infopage7.dart';
+import 'package:help_out/screens/infopage8.dart';
 
 class OrphanageListScreen2 extends StatefulWidget {
   @override
@@ -15,13 +21,10 @@ class _OrphanageListScreenState extends State<OrphanageListScreen2> {
 
   Map<String, Widget> _orphanagePages = {
     'Dnyandeep Balgruha': OrphanageInfoPage1(),
-    'Jeeva Jyothi Orphanage': OrphanageDetailsScreen(orphanageName: 'Jeeva Jyothi Orphanage',),
-    'Nachiket Balgram':
-        OrphanageDetailsScreen(orphanageName: 'Nachiket Balgram'),
-    'Adarana Charitable trust':
-        OrphanageDetailsScreen(orphanageName: 'Adarana Charitable trust'),
-    'NAAD Foundation':
-        OrphanageDetailsScreen(orphanageName: 'NAAD Foundation'),
+    'Jeeva Jyothi Orphanage': InfoPage3(),
+    'Nachiket Balgram': InfoPage4(),
+    'Adarana Charitable trust': InfoPage6(),
+    'NAAD Foundation': InfoPage8(),
   };
 
   List<String> _orphanageNames = [
@@ -119,21 +122,3 @@ class _OrphanageListScreenState extends State<OrphanageListScreen2> {
   }
 }
 
-class OrphanageDetailsScreen extends StatelessWidget {
-  final String orphanageName;
-
-  const OrphanageDetailsScreen({Key? key, required this.orphanageName})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(orphanageName),
-      ),
-      body: Center(
-        child: Text('Details for $orphanageName'),
-      ),
-    );
-  }
-}

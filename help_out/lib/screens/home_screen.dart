@@ -20,6 +20,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:help_out/screens/profile.dart' show ProfilePage;
 import 'package:help_out/screens/userlist2.dart';
+
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class home extends StatefulWidget {
@@ -34,9 +35,30 @@ class _homeState extends State<home> {
   Widget build(BuildContext context) {
     return WillPopScope(
         onWillPop: () async {
-          // Do not allow user to go back to login page
-          Navigator.of(context).popUntil((route) => route.isFirst);
-          return false;
+          bool exit = await showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text('Exit'),
+                content: Text('Do you want to exit?'),
+                actions: <Widget>[
+                  ElevatedButton(
+                    child: Text('Yes'),
+                    onPressed: () {
+                      Navigator.of(context).pop(true);
+                    },
+                  ),
+                  ElevatedButton(
+                    child: Text('No'),
+                    onPressed: () {
+                      Navigator.of(context).pop(false);
+                    },
+                  ),
+                ],
+              );
+            },
+          );
+          return exit ?? false;
         },
         child: Scaffold(
           appBar: _buildappbar(context),
@@ -61,7 +83,7 @@ Drawer _drawer(context) {
           title: Text("Register", style: TextStyle(fontSize: 20)),
           onTap: () async {
             var url = Uri.parse(
-                'https://docs.google.com/forms/d/e/1FAIpQLScwZwh_YzxMAZnFLefMoVRR40e2mjS29ulCiqKVV0-PnhkGEQ/viewform?usp=sf_link ');
+                'https://docs.google.com/forms/d/e/1FAIpQLScwZwh_YzxMAZnFLefMoVRR40e2mjS29ulCiqKVV0-PnhkGEQ/viewform?usp=sf_link');
             // ignore: deprecated_member_use
             if (await canLaunchUrl(url)) {
               // ignore: deprecated_member_use
@@ -118,7 +140,7 @@ Row _row2(BuildContext context) {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => OrphanageListScreen()));
+                      builder: (context) => OrphanageListScreen2()));
               // first_screen();
               //print("button clicked");
             },
@@ -150,11 +172,16 @@ Row _row2(BuildContext context) {
     // Icon(Icons.book_online_outlined , color : Colors.black, ),
     Expanded(
         child: GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => OrphanageListScreen()));
+            onTap: () async {
+              var url = Uri.parse(
+                  'https://docs.google.com/forms/d/e/1FAIpQLSdXPCwIt-OsdGh140x97q9UbO6Oqss_0MKJ16js3ENm2Gbkkg/viewform');
+              // ignore: deprecated_member_use
+              if (await canLaunchUrl(url)) {
+                // ignore: deprecated_member_use
+                await launchUrl(url);
+              } else {
+                throw 'Could not launch $url';
+              }
             },
             child: Container(
                 decoration: BoxDecoration(
@@ -257,10 +284,10 @@ Row _row3(context) {
   return Row(children: [
     Expanded(
         child: GestureDetector(
-           onTap: () => {Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => OrphanageListScreen2()))},
+      onTap: () => {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => OrphanageListScreen2()))
+      },
       child: Container(
           decoration: BoxDecoration(
             color: Color.fromARGB(255, 194, 43, 86),

@@ -24,7 +24,10 @@ class _OrphanageListScreenState extends State<OrphanageListScreen> {
     'Sneh Sawali Old Age Home': OrphanageInfoPage2(),
     'Jeeva Jyothi trust': InfoPage3(),
     'Nachiket Balgram': InfoPage4(),
-    'Adarana Charitable trust': InfoPage6()
+    'Vriddh Anand Ashram': InfoPage5(),
+    'Adarana Charitable trust': InfoPage6(),
+    'shanti sahyog old age home': InfoPage7(),
+    'Naad Foundation': InfoPage8()
   };
 
   List<String> _orphanageNames = [
@@ -32,9 +35,10 @@ class _OrphanageListScreenState extends State<OrphanageListScreen> {
     'Sneh Sawali Old Age Home',
     'Jeeva Jyothi trust',
     'Nachiket Balgram',
+    'Vriddh Anand Ashram',
     'Adarana Charitable trust',
-    'Jivhala Balsangopan Gruh',
-    ''
+    'shanti sahyog old age home',
+    'Naad Foundation'
   ];
 
   List<String> _filteredOrphanageNames = [];
@@ -119,25 +123,6 @@ class _OrphanageListScreenState extends State<OrphanageListScreen> {
                 )),
           );
         },
-      ),
-    );
-  }
-}
-
-class OrphanageDetailsScreen extends StatelessWidget {
-  final String orphanageName;
-
-  const OrphanageDetailsScreen({Key? key, required this.orphanageName})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(orphanageName),
-      ),
-      body: Center(
-        child: Text('Details for $orphanageName'),
       ),
     );
   }

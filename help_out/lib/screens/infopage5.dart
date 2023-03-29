@@ -105,8 +105,8 @@ class InfoPage5 extends StatelessWidget {
             const SizedBox(height: 15),
             GestureDetector(
               onTap: () async {
-                var url =
-                    Uri.parse('https://maps.app.goo.gl/UUwZLN7QpQeERcm59');
+                var url = Uri.parse(
+                    'https://www.google.com/maps/place/Sant+Baba+Moni+Saheb+Vridh+Anand+Ashram/@18.6459978,73.7622383,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2b9201ec2aeef:0xbe9c7c6e44fc25e7!8m2!3d18.6459978!4d73.7622383!16s%2Fg%2F11rr15pysn');
                 // ignore: deprecated_member_use
                 if (await canLaunchUrl(url)) {
                   // ignore: deprecated_member_use
