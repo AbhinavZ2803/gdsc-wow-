@@ -93,17 +93,17 @@ flutter:
     - assets/images/listpage.jpg
     - assets/images/loginpage.png
     - assets/images/home.png
-<<<<<<< HEAD
+
     - assets/images/infopage7.jpg
     - assets/images/infopage7i.jpg
     - assets/images/infopage8i.jpg
     - assets/images/infopage8.jpg
     - assets/images/register.png
 
-=======
+
     
     
->>>>>>> 0bb3c65fcaac46c5c3102d83b2e94ffaf6269c63
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
