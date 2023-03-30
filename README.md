@@ -52,6 +52,8 @@ This screen also gives an interesting facility to donate to the organisation jus
 ### Side Bar:-
 
 
+
+
 In the side Bar we have options like:-
 ![detail](help_out/assets/images/sidebar.jpg)
 
