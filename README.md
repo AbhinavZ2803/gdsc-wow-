@@ -68,7 +68,7 @@ In the side Bar we have options like:-
 
 
 ### About Us page
-![About us page](https://raw.githubusercontent.com/AbhinavZ2803/Donation_Helpout/f7dc3cfc3110c1e796659ac8d30e79b50845dc67/help_out/assets/images/aboutus.jpg)
+![About us page](help_out/assets/images/aboutus.jpg)
 
 4.sign out.
 
