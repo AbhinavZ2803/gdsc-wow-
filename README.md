@@ -55,6 +55,8 @@ This screen also gives an interesting facility to donate to the organisation jus
 
 
 In the side Bar we have options like:-
+
+.
 ![detail](help_out/assets/images/sidebar.jpg)
 
  1.Register:- Through this any organisation can register themselves into our app. Once this option is selected a google form will be opened. After the google form is submitted the organisation will be successfully registered in our app. 
