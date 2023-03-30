@@ -24,7 +24,7 @@ Our first screen is the login screen  where we need your name, email address and
 ### Login Screen:-
 Then you get directed to the login screen where you have to enter the same credentials you used to sign-up.
 
-![loginpage](https://github.com/AbhinavZ2803/Donation_Helpout/blob/master/help_out/assets/images/loginpage.png?raw=true)
+![loginpage](help_out/assets/images/login.png)
 
 ### Donation screen:-
 This screen specifies different ways one can donate to needy people around them. 
@@ -35,7 +35,7 @@ We have options like donate food, donate clothes, donate money, donate  books al
 ### Search screen:-
 After deciding the way you want to donate a list of orphanages, oldage homes and ngos will be shown to you that accept such type of donation that you have choosen. There is a search bar on top of the screen which allows the user to search for a particular organisation by their name. 
 
-![searchbar](https://raw.githubusercontent.com/AbhinavZ2803/Donation_Helpout/f7dc3cfc3110c1e796659ac8d30e79b50845dc67/help_out/assets/images/searchbar.jpg)
+![searchbar](help_out/assets/images/searchbar.jpg)
 
 
 
@@ -46,16 +46,16 @@ The Detail screen appears after selecting any one organisation. This screen incl
 This screen also gives an interesting facility to donate to the organisation just by scanning the QR code that will be available on the screen. 
 
 
-![detail](https://raw.githubusercontent.com/AbhinavZ2803/Donation_Helpout/f7dc3cfc3110c1e796659ac8d30e79b50845dc67/help_out/assets/images/detailscreen.jpg)
+![detail](help_out/assets/images/detailscreen.jpg)
 
 
 ### Side Bar:-
 In the side Bar we have options like:-
-![detail](https://raw.githubusercontent.com/AbhinavZ2803/Donation_Helpout/f7dc3cfc3110c1e796659ac8d30e79b50845dc67/help_out/assets/images/sidebar.jpg)
+![detail](help_out/assets/images/sidebar.jpg)
 
  1.Register:- Through this any organisation can register themselves into our app. Once this option is selected a google form will be opened. After the google form is submitted the organisation will be successfully registered in our app. 
 ### Orphanage Registration Page:-
-![register](https://github.com/AbhinavZ2803/Donation_Helpout/blob/master/help_out/assets/images/register.png?raw=true)
+![register](help_out/assets/images/register.png)
 
 
 2.contact form:- This the platform where one can raise any query. By filling this form we will directly receive your query through email and it will be resolved quickly. This form requires your name, the subject of the message, your email address and the message you want to convey to us.
