@@ -24,7 +24,7 @@ Our first screen is the login screen  where we need your name, email address and
 ### Login Screen:-
 Then you get directed to the login screen where you have to enter the same credentials you used to sign-up.
 
-![loginpage](help_out/assets/images/login.png)
+![loginpage](help_out/assets/images/loginpage.png)
 
 ### Donation screen:-
 This screen specifies different ways one can donate to needy people around them. 
