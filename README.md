@@ -61,7 +61,7 @@ In the side Bar we have options like:-
 2.contact form:- This the platform where one can raise any query. By filling this form we will directly receive your query through email and it will be resolved quickly. This form requires your name, the subject of the message, your email address and the message you want to convey to us.
 
 ### contact page
-![Contact page](https://raw.githubusercontent.com/AbhinavZ2803/Donation_Helpout/f7dc3cfc3110c1e796659ac8d30e79b50845dc67/help_out/assets/images/contactform.jpg)
+![Contact page](help_out/assets/images/contactform.jpg)
 
 
 3.About us:- Where you can read about this app.
