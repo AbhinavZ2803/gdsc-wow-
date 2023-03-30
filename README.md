@@ -19,7 +19,7 @@ https://drive.google.com/file/d/1Fmg3BCkSXuDUWu2kz1q2VuPivInbY1zX/view?usp=drive
  ### Sign up screen:- 
 Our first screen is the login screen  where we need your name, email address and password to make your account and get you registered in our app. Now your account is created!! Be sure to remember your credentials as they would be used in the next screen to login.
 
-![sign up](https://raw.githubusercontent.com/AbhinavZ2803/Donation_Helpout/f7dc3cfc3110c1e796659ac8d30e79b50845dc67/help_out/assets/images/signuppage.jpg)
+![sign up](help_out/assets/images/signuppage.jpg)
 
 ### Login Screen:-
 Then you get directed to the login screen where you have to enter the same credentials you used to sign-up.
@@ -30,7 +30,7 @@ Then you get directed to the login screen where you have to enter the same crede
 This screen specifies different ways one can donate to needy people around them. 
 We have options like donate food, donate clothes, donate money, donate  books also if anyone wants to give their time and share their knowledge with the orphaned children they can do that by choosing the option of teaching.
 
-![homescreen](https://github.com/AbhinavZ2803/Donation_Helpout/blob/master/help_out/assets/images/home.png?raw=true)
+![homescreen](help_out/assets/images/home.png)
 
 ### Search screen:-
 After deciding the way you want to donate a list of orphanages, oldage homes and ngos will be shown to you that accept such type of donation that you have choosen. There is a search bar on top of the screen which allows the user to search for a particular organisation by their name. 
