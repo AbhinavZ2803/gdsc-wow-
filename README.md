@@ -63,6 +63,7 @@ If someone wants to donate to big organizations like PM Relief Fund,Unicef India
 
 ### Side Bar:-
 In the side Bar we have options like:-
+
 .
 ![detail](https://github.com/AbhinavZ2803/gdsc-wow-/blob/master/gdsc_wow/assets/images/sidebar.jpg?raw=true)
 
