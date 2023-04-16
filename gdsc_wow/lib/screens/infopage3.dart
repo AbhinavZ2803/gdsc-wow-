@@ -106,7 +106,7 @@ class InfoPage3 extends StatelessWidget {
                     'https://www.google.com/maps/place/Jeeva+Jyothi+Head+Office/@13.1351079,80.2369953,17z/data=!3m1!4b1!4m6!3m5!1s0x3a526503792487ab:0x19224e30f8da66f3!8m2!3d13.1351079!4d80.2369953!16s%2Fg%2F11g873_hhw');
                 if (await canLaunchUrl(url)) {
                   // ignore: deprecated_member_use,
-                  await launchUrl(url);
+                  await launchUrl(url, mode: LaunchMode.externalApplication);
                 } else {
                   throw 'Could not launch $url';
                 }

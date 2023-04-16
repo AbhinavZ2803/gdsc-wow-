@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:help_out/main.dart';
 import 'package:help_out/screens/first_screen.dart';
-
+import 'package:help_out/screens/language_constants.dart';
+import 'package:help_out/screens/others.dart';
+import 'package:help_out/screens/others1.dart';
+import 'package:help_out/screens/profile.dart';
 import 'package:help_out/screens/first_screen.dart';
 import 'package:help_out/screens/sign_up_screen.dart';
 import 'package:help_out/screens/aboutus.dart';
@@ -13,6 +16,7 @@ import 'package:help_out/screens/userlist.dart';
 import 'package:help_out/screens/infopage1.dart';
 import 'package:help_out/screens/infopage2.dart';
 import 'package:help_out/screens/userlist.dart';
+
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:help_out/screens/contactus.dart';
@@ -20,6 +24,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:help_out/screens/profile.dart' show ProfilePage;
 import 'package:help_out/screens/userlist2.dart';
+import 'package:help_out/screens/language.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -56,10 +62,20 @@ Drawer _drawer(context) {
           decoration: BoxDecoration(
             color: Color.fromARGB(255, 194, 43, 86),
           ),
-          child: Text("Menu",
+          child: Text(translation(context).menu,
               style: TextStyle(fontSize: 30, color: Colors.white))),
+      // ListTile(
+      //     title: Text("Profile", style: TextStyle(fontSize: 20)),
+      //     onTap: () async {
+      //       await _auth.signOut();
+      //       Navigator.push(
+      //         context,
+      //         MaterialPageRoute(builder: (context) => profilepage2()),
+      //       );
+      //     }),
       ListTile(
-          title: Text("Register", style: TextStyle(fontSize: 20)),
+          title: Text(translation(context).register,
+              style: TextStyle(fontSize: 20)),
           onTap: () async {
             var url = Uri.parse(
                 'https://docs.google.com/forms/d/e/1FAIpQLScwZwh_YzxMAZnFLefMoVRR40e2mjS29ulCiqKVV0-PnhkGEQ/viewform?usp=sf_link');
@@ -72,7 +88,8 @@ Drawer _drawer(context) {
             }
           }),
       ListTile(
-          title: Text("Contact", style: TextStyle(fontSize: 20)),
+          title: Text(translation(context).contact,
+              style: TextStyle(fontSize: 20)),
           onTap: () {
             Navigator.push(
               context,
@@ -80,7 +97,8 @@ Drawer _drawer(context) {
             );
           }),
       ListTile(
-          title: Text("About Us ", style: TextStyle(fontSize: 20)),
+          title: Text(translation(context).aboutUs,
+              style: TextStyle(fontSize: 20)),
           onTap: () {
             Navigator.push(
               context,
@@ -88,7 +106,8 @@ Drawer _drawer(context) {
             );
           }),
       ListTile(
-          title: Text("Sign Out ", style: TextStyle(fontSize: 20)),
+          title: Text(translation(context).signout,
+              style: TextStyle(fontSize: 20)),
           onTap: () async {
             await _auth.signOut();
             Navigator.push(
@@ -140,7 +159,7 @@ Row _row2(BuildContext context) {
                       height: 80, width: 80, fit: BoxFit.contain),
                   Container(
                       margin: EdgeInsets.only(top: 5),
-                      child: Text("Books",
+                      child: Text(translation(context).books,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 23,
@@ -177,7 +196,7 @@ Row _row2(BuildContext context) {
                         height: 105, width: 100, fit: BoxFit.fitHeight),
                     Container(
                         //margin: EdgeInsets.only(bottom:5),
-                        child: Text("Teaching",
+                        child: Text(translation(context).teaching,
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 23,
@@ -209,7 +228,7 @@ Row _row1(context) {
                   foodlogo("assets/images/food3.png"),
                   Container(
                       margin: EdgeInsets.only(top: 10),
-                      child: Text("Food",
+                      child: Text(translation(context).food,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 23,
@@ -240,7 +259,7 @@ Row _row1(context) {
                         height: 70, width: 70, fit: BoxFit.contain),
                     Container(
                         margin: EdgeInsets.only(top: 10),
-                        child: Text("Money",
+                        child: Text(translation(context).money,
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 23,
@@ -282,7 +301,7 @@ Row _row3(context) {
                   height: 70, width: 70, fit: BoxFit.contain),
               Container(
                   margin: EdgeInsets.only(top: 15),
-                  child: Text("Clothes",
+                  child: Text(translation(context).clothes,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 23,
@@ -293,8 +312,8 @@ Row _row3(context) {
     Expanded(
         child: GestureDetector(
       onTap: () => {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => OrphanageListScreen()))
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Donationlinks()))
       },
       child: Container(
           decoration: BoxDecoration(
@@ -311,7 +330,7 @@ Row _row3(context) {
                   height: 70, width: 60, fit: BoxFit.contain),
               Container(
                   margin: EdgeInsets.only(top: 10),
-                  child: Text("others",
+                  child: Text(translation(context).others,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 23,
@@ -323,18 +342,79 @@ Row _row3(context) {
 }
 
 AppBar _buildappbar(context) {
+  // return AppBar(
+  //     backgroundColor: Color.fromARGB(255, 194, 43, 86),
+  //     title: Row(children: [
+  //       Expanded(
+  //           child: Text("HelpOut",
+  //               style: TextStyle(
+  //                   color: Colors.white,
+  //                   fontStyle: FontStyle.normal,
+  //                   fontSize: 28.0))),
+  //       // GestureDetector(
+  //       //   // onTap:()=>{
+
+  //       //   //   Navigator.push(context,
+  //       //   //   MaterialPageRoute(builder: (context) => ProfilePage(user: null,)))
+  //       //   // },
+  //       //     child: Icon(
+  //       //   Icons.language_sharp,
+  //       // ))
+  //         // Padding(padding: EdgeInsets.all(5.0),
+  //         // child: DropdownButton<String>(
+  //         //   underline: const SizedBox(),
+  //         //   icon: Icon(
+  //         //     Icons.language,
+  //         //     color: Colors.white,
+  //         //   ),
+  //         //   items:<String> ["English", "मराठी","മലയാളം","हिंदी"].map((String language){
+  //         //     return DropdownMenuItem(
+  //         //       value: language,
+  //         //       child : Text(language),
+  //         //     );
+  //         //   }).toList(),
+  //         //   onChanged: (String){},
+  //         // ))
+  //     ]));
   return AppBar(
-      backgroundColor: Color.fromARGB(255, 194, 43, 86),
-      title: Row(children: [
-        Expanded(
-            child: Text("HelpOut",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 28.0))),
-        GestureDetector(
-            child: Icon(
-          Icons.account_circle,
-        ))
-      ]));
+    backgroundColor: Color.fromARGB(255, 194, 43, 86),
+    title: Text("HelpOut",
+        style: TextStyle(
+            color: Colors.white, fontStyle: FontStyle.normal, fontSize: 28.0)),
+    actions: <Widget>[
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: DropdownButton<Language>(
+          underline: const SizedBox(),
+          icon: const Icon(
+            Icons.language,
+            color: Colors.white,
+          ),
+          onChanged: (Language? language) async {
+            if (language != null) {
+              Locale _locale = await setLocale(language.languageCode);
+              MyApp.setLocale(context, _locale);
+            }
+          },
+          items: Language.languageList()
+              .map<DropdownMenuItem<Language>>(
+                (e) => DropdownMenuItem<Language>(
+                  value: e,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      // Text(
+                      //   e.flag,
+                      //   style: const TextStyle(fontSize: 30),
+                      // ),
+                      Text(e.name)
+                    ],
+                  ),
+                ),
+              )
+              .toList(),
+        ),
+      ),
+    ],
+  );
 }

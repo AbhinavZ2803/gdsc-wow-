@@ -30,7 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+  shared_preferences: ^2.0.13
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -60,6 +63,7 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
+  generate: true
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
@@ -98,10 +102,15 @@ flutter:
     - assets/images/infopage8i.jpg
     - assets/images/infopage8.jpg
     - assets/images/register.png
-
-
-    
-    
+    - assets/images/infopage9.jpeg
+    - assets/images/infopage9i.jpeg
+    - assets/images/infopage10i.jpeg
+    - assets/images/infopage11i.jpeg
+    - assets/images/infopage12i.jpeg
+    - assets/images/others1.jpeg
+    - assets/images/others2.jpg
+    - assets/images/others3.jpg
+    - assets/images/others4.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

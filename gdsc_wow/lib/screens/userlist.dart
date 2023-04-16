@@ -9,6 +9,8 @@ import 'package:help_out/screens/infopage5.dart';
 import 'package:help_out/screens/infopage6.dart';
 import 'package:help_out/screens/infopage7.dart';
 import 'package:help_out/screens/infopage8.dart';
+import 'package:help_out/screens/infopage9.dart';
+import 'package:help_out/screens/infopage10.dart';
 
 class OrphanageListScreen extends StatefulWidget {
   @override
@@ -27,7 +29,10 @@ class _OrphanageListScreenState extends State<OrphanageListScreen> {
     'Vriddh Anand Ashram': InfoPage5(),
     'Adarana Charitable trust': InfoPage6(),
     'shanti sahyog old age home': InfoPage7(),
-    'Naad Foundation': InfoPage8()
+    'Naad Foundation': InfoPage8(),
+    'Relief Old Age Home,Kozhikode': InfoPage10(),
+    'Nanma Maram Old Age Home': InfoPage9(),
+   
   };
 
   List<String> _orphanageNames = [
@@ -38,7 +43,10 @@ class _OrphanageListScreenState extends State<OrphanageListScreen> {
     'Vriddh Anand Ashram',
     'Adarana Charitable trust',
     'shanti sahyog old age home',
-    'Naad Foundation'
+    'Naad Foundation',
+    'Relief Old Age Home,Kozhikode',
+    'Nanma Maram Old Age Home',
+    
   ];
 
   List<String> _filteredOrphanageNames = [];

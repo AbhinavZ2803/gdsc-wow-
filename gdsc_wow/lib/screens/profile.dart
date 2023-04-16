@@ -12,37 +12,38 @@ import 'dart:convert';
 import 'package:help_out/screens/contactus.dart';
 import 'package:help_out/screens/infopage1.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import 'package:help_out/screens/infopage2.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 
 
-class ProfilePage extends StatefulWidget {
-  final User user;
-  
+class ProfilePage extends StatelessWidget {
+  final String name;
+  final String email;
 
-  const ProfilePage({Key? key, required this.user}) : super(key: key);
+  ProfilePage({required this.name, required this.email});
 
-  @override
-  _ProfilePageState createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: Text('Profile Page'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Email: ${widget.user.email}'),
-          Text('Password: ${widget.user.providerData[0].providerId == 'password' ? '******' : 'N/A'}'),
-          Text('Name: ${widget.user.displayName ?? 'N/A'}'),
-        ],
-      ),
-    );
-  }
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Name: $name',
+              style: TextStyle(fontSize: 24),
+            ),
+            Text(
+              'Email: $email',
+              style: TextStyle(fontSize: 24),
+            ),
+          ],
+        ),
+     ),
+);
+}
 }

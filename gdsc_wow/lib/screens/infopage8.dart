@@ -72,7 +72,7 @@ class InfoPage8 extends StatelessWidget {
                   path: "794 741 8337",
                 );
                 if (await canLaunchUrl(url)) {
-                  await launchUrl(url);
+                  await launchUrl(url, mode: LaunchMode.externalApplication);
                 } else {
                   print('cannot launch this url');
                 }

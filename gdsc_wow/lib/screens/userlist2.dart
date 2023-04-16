@@ -9,6 +9,8 @@ import 'package:help_out/screens/infopage5.dart';
 import 'package:help_out/screens/infopage6.dart';
 import 'package:help_out/screens/infopage7.dart';
 import 'package:help_out/screens/infopage8.dart';
+import 'package:help_out/screens/infopage9.dart';
+import 'package:help_out/screens/infopage10.dart';
 
 class OrphanageListScreen2 extends StatefulWidget {
   @override
@@ -121,4 +123,3 @@ class _OrphanageListScreenState extends State<OrphanageListScreen2> {
     );
   }
 }
-

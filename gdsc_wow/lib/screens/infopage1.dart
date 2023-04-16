@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:help_out/screens/home_screen.dart';
 import 'package:help_out/screens/first_screen.dart';
+import 'package:help_out/screens/language_constants.dart';
 import 'package:help_out/screens/sign_up_screen.dart';
 import 'package:help_out/screens/aboutus.dart';
 import 'package:http/http.dart' as http;
@@ -44,7 +45,7 @@ class OrphanageInfoPage1 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Dnyandeep Balgruha',
+                    translation(context).dnyandeepbalgruha,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10),
@@ -57,7 +58,7 @@ class OrphanageInfoPage1 extends StatelessWidget {
                               fontWeight: FontWeight.bold))),
                   const SizedBox(height: 10),
                   Text(
-                    'An orphanage taking care of over 70 orphans by funding their basic needs and primary education',
+                    translation(context).info1about,
                     style: TextStyle(fontSize: 16),
                   ),
                   const SizedBox(height: 10),
@@ -128,7 +129,7 @@ class OrphanageInfoPage1 extends StatelessWidget {
                     Icon(Icons.location_on, color: Colors.white),
                     const SizedBox(width: 10),
                     Text(
-                      'View Location',
+                      translation(context).view,
                       style: TextStyle(fontSize: 18, color: Colors.white),
                     ),
                   ],
@@ -158,7 +159,7 @@ class OrphanageInfoPage1 extends StatelessWidget {
                       //           const SizedBox(width: 10),
                       //           Text('Donate'),
                       //         ])),
-                      Text("Scan to Pay",
+                      Text(translation(context).scan,
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 20,

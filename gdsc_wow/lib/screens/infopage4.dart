@@ -108,7 +108,7 @@ class InfoPage4 extends StatelessWidget {
                 // ignore: deprecated_member_use
                 if (await canLaunchUrl(url)) {
                   // ignore: deprecated_member_use
-                  await launchUrl(url);
+                  await launchUrl(url, mode: LaunchMode.externalApplication);
                 } else {
                   throw 'Could not launch $url';
                 }
