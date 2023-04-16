@@ -18,7 +18,8 @@ https://drive.google.com/drive/folders/1T_LHhkNGSYBwETdxOKvsaPvgFAIhXvGd
 ## Features
 
  ### Sign up screen:- 
-Our first screen is the login screen  where we need your name, email address and password to make your account and get you registered in our app. Now your account is created!! Be sure to remember your credentials as they would be used in the next screen to login.
+Our first screen is the login screen  where we need your name, email address and password to make your account and get you registered in our app. Now your account is created!! Be sure to remember your credentials as they would be
+used in the next screen to login.
 .
 ![signup](https://github.com/AbhinavZ2803/gdsc-wow-/blob/master/gdsc_wow/assets/images/signuppage.jpg?raw=true)
 
